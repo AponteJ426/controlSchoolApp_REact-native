@@ -1,8 +1,10 @@
 import * as React from "react";
 import Svg, { Path, Defs, LinearGradient, Stop } from "react-native-svg";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const Svgtemp = ({width,height}) => (
-  <Svg width={width} height={height} fill="none" strokeLinecap='round' strokeLinejoin='round'>
+ 
+  <Svg width= {wp(`${width}`+'%')} height={hp(`${height}`+'%')} fill="none" strokeLinecap='round' strokeLinejoin='round'>
     <Path
       d="M11.034 25c0 .55-.167 1.09-.483 1.559-.315.47-.767.852-1.306 1.104a3.6 3.6 0 0 1-3.433-.215 3.08 3.08 0 0 1-1.126-1.258 2.745 2.745 0 0 1-.24-1.604c.083-.545.33-1.058.713-1.484.384-.426.89-.749 1.462-.932V5c0-.265.116-.52.323-.707.207-.188.487-.293.78-.293.293 0 .573.105.78.293A.955.955 0 0 1 8.828 5v17.17c.645.207 1.204.59 1.6 1.097.395.507.607 1.112.606 1.733Z"
       fill="url(#a)"
