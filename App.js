@@ -3,6 +3,8 @@ import BtnSensor from "./src/components/BtnSensor";
 import Svgtemp from "./src/assets/svgTemp";
 import SvgMotion from "./src/assets/SvgMotion";
 import SvgSmoke from "./src/assets/SvgSmoke";
+import AppBar from "./src/components/AppBar";
+import NavBar from "./src/components/NavBar";
 
 export default function App() { 
 
@@ -12,20 +14,22 @@ export default function App() {
 
   return (
     <View style={styles.grid}>
+      <AppBar/>
       <View style={styles.items}>
       <BtnSensor
         name={"sensor de temperatura"}
         svg={svgTemp()}
-      />
+        />
       <BtnSensor
         name={"sensor de humo"}
         svg={svgSmoke()}
-      />
+        />
       <BtnSensor
         name={"sensor de movimiento"}
         svg={svgMotion()}
-      />
+        />
       </View>
+    <NavBar/>
     </View>
   );
 }
@@ -33,9 +37,10 @@ const styles = StyleSheet.create({
   grid: {
     display:'flex',
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     backgroundColor: "#f4f4f4",
     flexDirection:'column',
+    
     
   },items:{
     justifyContent: "center",
