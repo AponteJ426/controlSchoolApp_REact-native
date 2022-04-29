@@ -3,8 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./src/screens/Home";
 import SettingsScreen from "./src/screens/Settings";
 
-
-
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -24,3 +22,4 @@ export default function App() {
 
   )
 }
+
