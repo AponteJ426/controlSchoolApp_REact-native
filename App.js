@@ -1,3 +1,4 @@
+
 import { NavigationContainer} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./src/screens/Home";
@@ -21,5 +22,4 @@ export default function App() {
     </NavigationContainer>
 
   )
-}
-
+  }
