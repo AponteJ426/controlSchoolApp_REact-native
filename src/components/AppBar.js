@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { LinearGradient } from 'expo-linear-gradient';
 
 import SvgNotification from '../assets/SvgNotification';
 import SvgBack from '../assets/SvgBack';
@@ -11,9 +10,8 @@ export default function AppBar({ title }) {
     const onpresshome = () => console.log('home');
     const onpressnotif = () => console.log('notification');
     return (
-        <LinearGradient
-        colors={['#105BA0', '#1890FF','#fff']}
-        style={styles.container}>
+      
+        <View style={styles.container}>
      
             <TouchableOpacity onPress={onpressback}>
                 <SvgBack height={3.5} width={5.5} />
@@ -26,28 +24,26 @@ export default function AppBar({ title }) {
             <TouchableOpacity onPress={onpressnotif}>
                 <SvgNotification height={3.5} width={5.5} />
             </TouchableOpacity>
-            </LinearGradient>
+            </View>
+            
 
     )
 }
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        borderBottomLeftRadius: wp('25%'),
-        borderBottomRightRadius: wp('25%'),
-      
+        backgroundColor:'#117CDF',
+        borderBottomLeftRadius: wp('15%'),
+        borderBottomRightRadius: wp('15%'),
         display: 'flex',
-        height: hp('16%'),
+        height: hp('15%'),
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingLeft: wp('7%'),
         paddingRight: wp('7%'),
-        shadowColor: '#171717',
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    elevation: 10,
-    shadowColor: '#000',
+        shadowColor: "#fff",
+        elevation: 5,
+        
       },
 
     text: {
@@ -55,5 +51,7 @@ const styles = StyleSheet.create({
         fontSize: hp('2.2%'),
         fontWeight: '300',
         marginTop: hp('0.2%'),
-    },
+    
+
+}
 });
