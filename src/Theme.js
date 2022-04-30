@@ -1,8 +1,11 @@
+const primary = "117CDF";
+const secondary = "FEFCFD";
+
 const Theme={
     Background:{
         back:"#F3F3F3",
-        primary:"117CDF",
-        secondary:"FEFCFD",
+        primary:primary,
+        secondary:secondary ,
         degrade:{
             color1:"",
             color2:"",
@@ -14,20 +17,26 @@ const Theme={
         lg:12,
         xl:14,
         xxl:16,
+        xxxl:18,
+        xxxxl:20,
+        xxxxxl:22,
+        xxxxxxl:24,
+        xxxxxxxl:26,
+        xxxxxxxxl:28,
     },
     FontFamily:{
         roboto:"Roboto",
     },
     FontWeight:{
-        light:300,
-        regular:400,
-        medium:500,
-        bold:700,
+        light:"300",
+        regular:"400",
+        medium:"500",
+        bold:"700",
 
     },
     FontColor:{
-        textTitle:Theme.background.primary,
-        textWhite:Theme.background.secondary,
+        textTitle:primary,
+        textWhite:secondary,
         text:"737272",
     },
     
