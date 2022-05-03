@@ -3,7 +3,6 @@ import React from "react";
 import HomeScreen from "../screens/Home";
 import GraphicScreen from "../screens/Graphic";
 import SettingsScreen from "../screens/Settings";
-import NotificationsScreen from "../screens/Notifications";
 import NavBar from "./CustomNavBar";
 
 import { getHeaderTitle } from "@react-navigation/elements";
@@ -29,8 +28,6 @@ export default function toolBar(){
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Graphic" component={GraphicScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name="Notifications" component={NotificationsScreen} />
-
       </Tab.Navigator>
   )
 }

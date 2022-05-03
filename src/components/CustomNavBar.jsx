@@ -8,24 +8,11 @@ import {
 import SvgNotification from "../assets/SvgNotification";
 import SvgBack from "../assets/SvgBack";
 import Theme from "../Theme";
-import { useNavigation } from "@react-navigation/native";
 
 export default function CustomNavBar({ title }) {
-
-  const navigation = useNavigation()
-
-
-  const onpressback = () => {
-    
-    if (navigation.canGoBack()) {
-      navigation.goBack();
-    }
-    
-  };
+  const onpressback = () => console.log("back");
   const onpresshome = () => console.log("home");
-  const onpressnotif = () => {
-    navigation.navigate("Notifications");
-  };
+  const onpressnotif = () => console.log("notification");
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onpressback}>
@@ -44,7 +31,7 @@ export default function CustomNavBar({ title }) {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: Theme.Background.primary,
+    backgroundColor: "#117CDF",
     borderBottomLeftRadius: wp("120%"),
     borderBottomRightRadius: wp("120%"),
     display: "flex",
@@ -61,7 +48,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: Theme.FontColor.textWhite,
+    color: "#fff",
     fontSize: Theme.FontSize.xxxxxl,
     fontWeight: Theme.FontWeight.medium,
     marginTop: 0,
