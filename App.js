@@ -1,7 +1,10 @@
-import MainStack from "./src/Navigation/MainStack";
+import { NavigationContainer } from "@react-navigation/native";
+import ToolBar from "./src/components/ToolBar";
 
 export default function App() {
   return (
-    <MainStack />
-  )
+    <NavigationContainer>
+      <ToolBar />
+    </NavigationContainer>
+  );
 }
