@@ -4,6 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { useNavigation } from "@react-navigation/native";
 
 import SvgNotification from "../assets/SvgNotification";
 import SvgBack from "../assets/SvgBack";
