@@ -22,7 +22,6 @@ export default function CustomNavBar({ title }) {
     }
     
   };
-  const onpresshome = () => console.log("home");
   const onpressnotif = () => {
     navigation.navigate("Notifications");
   };
@@ -31,9 +30,8 @@ export default function CustomNavBar({ title }) {
       <TouchableOpacity onPress={onpressback}>
         <SvgBack height={4} width={10} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={onpresshome}>
+     
         <Text style={styles.text}>{title}</Text>
-      </TouchableOpacity>
       <TouchableOpacity onPress={onpressnotif}>
         <SvgNotification height={4} width={10} />
       </TouchableOpacity>
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: wp("120%"),
     borderBottomRightRadius: wp("120%"),
     display: "flex",
-    height: hp("22%"),
+    height: hp("20%"),
     flexDirection: "row",
     justifyContent: "space-between",
     paddingLeft: wp("20%"),

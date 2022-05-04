@@ -1,12 +1,16 @@
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import StyleNavBar from "../components/StyleNavBar";
+import CustomNavBar from "../components/CustomNavBar";
 
 import SettingsScreen from "../screens/Settings";
 import HomeScreen from "../screens/Home";
 import GraphicsScreen from "../screens/Graphics";
+
+import { getHeaderTitle } from "@react-navigation/elements";
 
 import SvgHome from "../assets/SvgHome";
 import SvgConfig from "../assets/SvgConfig";
@@ -15,13 +19,23 @@ import SvgGraphic from "../assets/SvgGraphic";
 
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
 
 const MainStack = () => {
     return (
         <NavigationContainer>
+
+          
             <Tab.Navigator
-                screenOptions={{ headerShown: false }}
                 initialRouteName="inicio"
+                screenOptions={{
+                    
+                    header: ({ navigation, route, options }) => {
+                        const title = getHeaderTitle(options, route.name);
+                        return <CustomNavBar title={title} style={options.headerStyle} />;
+                    },
+                }}
                 tabBar={props => <StyleNavBar {...props} />}
             >
                 <Tab.Screen
