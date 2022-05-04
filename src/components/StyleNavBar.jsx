@@ -36,12 +36,7 @@ export default ({ state, descriptors, navigation })=> {
         const tintColor = isFocused ? '#117CDF' :'#fff';
 
         const backgroundColor = isFocused? '#f4f4f4' : '#fff';
-        const onLongPress = () => {
-          navigation.emit({
-            type: 'tabLongPress',
-            target: route.key,
-          });
-        };
+       
 
         return (
           <TouchableOpacity
@@ -60,10 +55,8 @@ export default ({ state, descriptors, navigation })=> {
           }}
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
-            accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
-            onLongPress={onLongPress}
           >
             {options.tabBarIcon !== undefined &&
                 options.tabBarIcon({ color:'#fff'})}
