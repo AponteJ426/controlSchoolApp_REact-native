@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SvgXml } from 'react-native-svg';
+import { SvgCss } from 'react-native-svg';
 
 const xml = `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_151_31)">
@@ -24,4 +24,4 @@ const xml = `<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="
 </defs>
 </svg>`;	
 
-export default  function SvgTempNotification() {return  <SvgXml xml={xml} width="100%" height="100%" />} 
+export default  function SvgTempNotification() {return  <SvgCss xml={xml}  />} 

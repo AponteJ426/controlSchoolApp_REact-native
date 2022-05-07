@@ -11,16 +11,12 @@ import SvgBack from "../assets/SvgBack";
 import Theme from "../Theme";
 
 export default function CustomNavBar({ title }) {
-
-  const navigation = useNavigation()
-
+  const navigation = useNavigation();
 
   const onpressback = () => {
-    
     if (navigation.canGoBack()) {
       navigation.goBack();
     }
-    
   };
   const onpressnotif = () => {
     navigation.navigate("Notificaciones");
@@ -30,8 +26,8 @@ export default function CustomNavBar({ title }) {
       <TouchableOpacity onPress={onpressback}>
         <SvgBack height={4} width={10} />
       </TouchableOpacity>
-     
-        <Text style={styles.text}>{title}</Text>
+
+      <Text style={styles.text}>{title}</Text>
       <TouchableOpacity onPress={onpressnotif}>
         <SvgNotification height={4} width={10} />
       </TouchableOpacity>

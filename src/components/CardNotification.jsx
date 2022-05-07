@@ -4,9 +4,9 @@ import SvgTempNotification from "../assets/SvgTempNotification";
 
 export default function CardNotification() {
   return (
-    <View>
+    <View style={styles.outline}>
       <View>
-        <SvgTempNotification></SvgTempNotification>
+        <SvgTempNotification style={styles.icon}></SvgTempNotification>
       </View>
       <View style= {styles.container}>
         <Text>Sensor de movimiento</Text>
@@ -17,10 +17,17 @@ export default function CardNotification() {
 }
 const styles = StyleSheet.create({
   container: {
-    flexdirection: 'column',
+    flexDirection: "column",
     paddingLeft: 20,
-    borderBottomWidth: 2,
-    borderBottomColor: '#black',
-
+    height: 100,
+    color: "#000",
+  },
+  icon:{
+    width: 10,
+    height: 10,
+  },
+  outline:{
+    borderWidth: 1,
+    borderColor: "#000",
   }
 })
