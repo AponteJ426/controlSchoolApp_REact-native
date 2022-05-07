@@ -15,6 +15,7 @@ import { getHeaderTitle } from "@react-navigation/elements";
 import SvgHome from "../assets/SvgHome";
 import SvgConfig from "../assets/SvgConfig";
 import SvgGraphic from "../assets/SvgGraphic";
+import Notifications from "../screens/Notifications";
 
 
 
@@ -63,6 +64,15 @@ const MainStack = () => {
                         title: "Configuración",
                         tabBarIcon: () =>
                             (<SvgConfig />)
+                    }}
+                />
+                     <Tab.Screen
+                    name="Notificaciones"
+                    component={Notifications}
+                    options={{
+                        title: "Notificaciones",
+                        tabBarIcon: () =>
+                            (null)
                     }}
                 />
             </Tab.Navigator>

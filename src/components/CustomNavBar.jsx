@@ -23,7 +23,7 @@ export default function CustomNavBar({ title }) {
     
   };
   const onpressnotif = () => {
-    navigation.navigate("Notifications");
+    navigation.navigate("Notificaciones");
   };
   return (
     <View style={styles.container}>

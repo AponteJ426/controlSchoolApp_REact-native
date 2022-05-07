@@ -1,3 +1,4 @@
+import CardNotification from "../components/CardNotification"
 export default function Notifications (){
-    return(<></>)
+    return <CardNotification></CardNotification>
 }
