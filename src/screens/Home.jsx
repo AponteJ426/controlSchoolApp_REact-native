@@ -1,13 +1,11 @@
-import { StyleSheet, View} from "react-native";
+import { StyleSheet, View,Button} from "react-native";
 import BtnSensor from "../components/BtnSensor";
 import Svgtemp from "../assets/svgTemp";
 import SvgMotion from "../assets/SvgMotion";
 import SvgSmoke from "../assets/SvgSmoke";
 
 
-
 export default function Home() { 
-
   const svgTemp = () => <Svgtemp height={3.5} width={6.1} />;
   const svgSmoke = () => <SvgSmoke height={3.4} width={7.6} />;
   const svgMotion = () => <SvgMotion height={3.2} width={6.7} />;
@@ -28,6 +26,8 @@ export default function Home() {
         svg={svgMotion()}
         />
       </View>
+
+     
     </View>
   );
 }
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   grid: {
     display:'flex',
     flex: 1,
-    justifyContent: "space-between",
+    justifyContent: "center",
     backgroundColor: "#f4f4f4",
     flexDirection:'column',
     
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   },items:{
     justifyContent: "center",
     flexDirection:'row',
-    flexWrap:'wrap'
+    flexWrap:'wrap',
+    marginBottom:150
   }
 });

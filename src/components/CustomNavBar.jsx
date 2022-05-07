@@ -4,11 +4,11 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { useNavigation } from "@react-navigation/native";
 
 import SvgNotification from "../assets/SvgNotification";
 import SvgBack from "../assets/SvgBack";
 import Theme from "../Theme";
-import { useNavigation } from "@react-navigation/native";
 
 export default function CustomNavBar({ title }) {
 
@@ -22,7 +22,6 @@ export default function CustomNavBar({ title }) {
     }
     
   };
-  const onpresshome = () => console.log("home");
   const onpressnotif = () => {
     navigation.navigate("Notifications");
   };
@@ -31,9 +30,8 @@ export default function CustomNavBar({ title }) {
       <TouchableOpacity onPress={onpressback}>
         <SvgBack height={4} width={10} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={onpresshome}>
+     
         <Text style={styles.text}>{title}</Text>
-      </TouchableOpacity>
       <TouchableOpacity onPress={onpressnotif}>
         <SvgNotification height={4} width={10} />
       </TouchableOpacity>
@@ -44,11 +42,11 @@ export default function CustomNavBar({ title }) {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: Theme.Background.primary,
+    backgroundColor: "#117CDF",
     borderBottomLeftRadius: wp("120%"),
     borderBottomRightRadius: wp("120%"),
     display: "flex",
-    height: hp("22%"),
+    height: hp("20%"),
     flexDirection: "row",
     justifyContent: "space-between",
     paddingLeft: wp("20%"),
@@ -61,7 +59,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: Theme.FontColor.textWhite,
+    color: "#fff",
     fontSize: Theme.FontSize.xxxxxl,
     fontWeight: Theme.FontWeight.medium,
     marginTop: 0,

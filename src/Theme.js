@@ -1,5 +1,5 @@
-const primary = "#117CDF";
-const secondary = "#FEFCFD";
+const primary = "117CDF";
+const secondary = "FEFCFD";
 
 const Theme={
     Background:{
