@@ -6,9 +6,10 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 
 
 
-export default function BtnSensor({name,svg}) {
+export default function BtnSensor({name,svg,setFirebase,activate,idName}) {
 
-  const onPress = () => console.log('on press button');
+  const onPress = () => {setFirebase(idName)}
+
 
   return (
     
@@ -16,12 +17,12 @@ export default function BtnSensor({name,svg}) {
         style={styles.card}
         onPress={onPress}
         underlayColor='#117CDF'>
-        <View style={styles.card}>
+        <View style={activate?{...styles.card, backgroundColor: '#117CDF'}:styles.card}>
           <View style={styles.svg}>
           {svg}
           </View>
           <Text
-            style={styles.text}>
+            style={activate?{...styles.text, color: '#fff'}:styles.text}>
             {name}
           </Text>
         </View>
@@ -58,10 +59,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation: 5,
   },
-  onPress: {
-    backgroundColor: '#117CDF',
-    color: '#fff'
-  },
+
 
   svg: {
     width: wp('11.5%'),
