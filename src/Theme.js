@@ -1,11 +1,12 @@
-const primary = "117CDF";
-const secondary = "FEFCFD";
+const primary = "#117CDF";
+const secondary = "#FEFCFD";
 
 const Theme={
     Background:{
         back:"#F3F3F3",
         primary:primary,
         secondary:secondary ,
+        borderColor:"'rgba(0, 0, 0, 0.1)'",
         degrade:{
             color1:"",
             color2:"",

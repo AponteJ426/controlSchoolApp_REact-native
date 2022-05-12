@@ -1,4 +1,5 @@
-import CardNotification from "../components/CardNotification"
+import ListCardsNotification from "../components/ListCardsNotification"
+
 export default function Notifications (){
-    return <CardNotification></CardNotification>
+    return <ListCardsNotification/>
 }
