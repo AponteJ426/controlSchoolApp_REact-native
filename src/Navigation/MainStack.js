@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import StyleNavBar from "../components/StyleNavBar";
-import CustomNavBar from "../components/CustomNavBar";
+import CustomAppBar from "../components/CustomAppBar";
 
 import SettingsScreen from "../screens/Settings";
 import HomeScreen from "../screens/Home";
@@ -27,7 +27,7 @@ const MainStack = () => {
         screenOptions={{
           header: ({ navigation, route, options }) => {
             const title = getHeaderTitle(options, route.name);
-            return <CustomNavBar title={title} style={options.headerStyle} />;
+            return <CustomAppBar title={title} style={options.headerStyle} />;
           },
         }}
         tabBar={(props) => <StyleNavBar {...props} />}
@@ -57,15 +57,13 @@ const MainStack = () => {
             tabBarIcon: () => <SvgConfig />,
           }}
         />
-        <Tab.Screen
-          name="Notificaciones"
-          component={Notifications}
-          options={{
-            title: "Notificaciones",
-            tabBarIcon: () => null,
-          }}
-        />
+        <Stack.Screen
+       name="Notificaciones"
+       component={Notifications}/>
+       
       </Tab.Navigator>
+     
+      
     </NavigationContainer>
   );
 };

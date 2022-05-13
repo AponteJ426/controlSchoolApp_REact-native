@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 export default ({ state, descriptors, navigation }) => {
   return (
@@ -12,9 +12,9 @@ export default ({ state, descriptors, navigation }) => {
       }}
     >
       {state.routes.map((route, index) => {
- 
-        if(route.name == "Notificaciones"){
-          return
+        
+        if (route.name == "Notificaciones") {
+          return;
         }
 
         const { options } = descriptors[route.key];
@@ -37,7 +37,7 @@ export default ({ state, descriptors, navigation }) => {
             navigation.navigate(route.name);
           }
         };
-        const tintColor = "#117CDF" 
+        const tintColor = isFocused ? "#117CDF" : "#fff";
 
         const backgroundColor = isFocused ? "#f4f4f4" : "#fff";
 
@@ -63,15 +63,11 @@ export default ({ state, descriptors, navigation }) => {
           >
             {options.tabBarIcon !== undefined &&
               options.tabBarIcon({ color: "#fff" })}
-            {(
+            {isFocused && (
               <Text
                 style={{
                   marginLeft: 8,
                   color: tintColor,
-                  alignSelf: "center",
-                  position:"absolute",
-                  fontSize: 12,
-                  top:37,
                 }}
               >
                 {label}

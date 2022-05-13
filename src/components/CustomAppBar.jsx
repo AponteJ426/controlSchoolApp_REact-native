@@ -10,7 +10,7 @@ import SvgNotification from "../assets/SvgNotification";
 import SvgBack from "../assets/SvgBack";
 import Theme from "../Theme";
 
-export default function CustomNavBar({ title }) {
+export default function CustomAppBar({ title }) {
   const navigation = useNavigation();
 
   const onpressback = () => {
