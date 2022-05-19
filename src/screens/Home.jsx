@@ -13,6 +13,7 @@ import firebaseConfig from "../database/configFirebase.js";
 import { LogBox } from "react-native";
 
 LogBox.ignoreLogs(["Setting a timer"]);
+LogBox.ignoreLogs(['Remote debugger'])
 
 export default function Home() {
   const svgTemp = () => <Svgtemp height={3.5} width={6.1} />;

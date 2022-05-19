@@ -9,13 +9,27 @@ import {
 
 import Theme from "../Theme";
 
-export default function CardNotification({ title, text, icon, date }) {
+export default function CardNotification({
+  title,
+  text,
+  svgSensorSmoke = () => {},
+  data = 0,
+}) {
   return (
     <View style={styles.card}>
-      <View style={styles.iconContainer}>{icons[icon]}</View>
+      <View style={styles.iconContainer}>{svgSensorSmoke()}</View>
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.text}>{text}</Text>
+        <Text
+          style={{
+            ...styles.text,
+            fontWeight: "bold",
+            color: '#FF9C00',
+          }}
+        >
+          {data != 0 ? data + "°C" : ''}
+        </Text>
       </View>
     </View>
   );
@@ -23,33 +37,34 @@ export default function CardNotification({ title, text, icon, date }) {
 const styles = StyleSheet.create({
   card: {
     width: wp("100%"),
-    height: hp("10%"),
     flexDirection: "row",
-    borderBottomWidth:2,
-    borderBottomColor:Theme.Background.borderColor,
+    borderBottomWidth: 2,
+    borderBottomColor: Theme.Background.borderColor,
   },
   container: {
     flex: 1,
     flexDirection: "column",
-    paddingLeft: 20,
-    height: 100,
     color: "#000",
-    padding: 5,
+    borderRadius: 20,
+    padding: 20,
   },
   iconContainer: {
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-end",
+    padding: 10,
   },
-  icon: {},
   title: {
     fontSize: 20,
     fontWeight: "bold",
     color: Theme.Background.primary,
+    padding: 10,
   },
   text: {
-    textAlign: "justify",
-    width: wp("90%"),
+    fontSize: wp("3%"),
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 10,
   },
 });
-
-const icons = [<SvgTempNotification style={styles.icon} />];
