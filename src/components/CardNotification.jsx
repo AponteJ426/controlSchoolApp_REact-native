@@ -1,6 +1,4 @@
-import { StyleSheet, View } from "react-native";
-import { Text } from "react-native";
-import SvgTempNotification from "../assets/SvgTempNotification";
+import { StyleSheet, View,ScrollView,Text } from "react-native";
 
 import {
   widthPercentageToDP as wp,
@@ -14,6 +12,7 @@ export default function CardNotification({
   text,
   svgSensorSmoke = () => {},
   data = 0,
+
 }) {
   return (
     <View style={styles.card}>
@@ -21,15 +20,37 @@ export default function CardNotification({
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.text}>{text}</Text>
-        <Text
+        {text=='Temperatura:'&&data.T!=0&&(
+    <ScrollView >
+    <Text
           style={{
             ...styles.text,
             fontWeight: "bold",
             color: '#FF9C00',
           }}
         >
-          {data != 0 ? data + "°C" : ''}
+          {data != 0 ? data.T + "°C"+ "   "+data.F + "°F":"conectando a el Sensor"}
         </Text>
+        <Text style={styles.text}>Humedad:</Text>
+        <Text
+          style={{
+            ...styles.text,
+            fontWeight: "bold",
+            color: '#FF9C00',
+          }}
+        >{data != 0 ? data.H+'%':"conectando a el Sensor"}
+        </Text>
+        <Text style={styles.text}>Sensación Térmica:</Text>
+        <Text
+          style={{
+            ...styles.text,
+            fontWeight: "bold",
+            color: '#FF9C00',
+          }}
+        >{data != 0 ? data.HIC+'°C    '+data.HIF+ "°F":"conectando a el Sensor"}
+        </Text>
+    </ScrollView>
+        )}
       </View>
     </View>
   );
